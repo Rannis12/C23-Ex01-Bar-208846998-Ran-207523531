@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 FBApi/
+bin/
+obj/
