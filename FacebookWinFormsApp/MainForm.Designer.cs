@@ -107,6 +107,7 @@ namespace BasicFacebookFeatures
             this.albumsButton.TabIndex = 8;
             this.albumsButton.Text = "Albums";
             this.albumsButton.UseVisualStyleBackColor = true;
+            this.albumsButton.Click += new System.EventHandler(this.albumsButton_Click);
             // 
             // favoriteTeamsButton
             // 
@@ -116,6 +117,7 @@ namespace BasicFacebookFeatures
             this.favoriteTeamsButton.TabIndex = 7;
             this.favoriteTeamsButton.Text = "Teams";
             this.favoriteTeamsButton.UseVisualStyleBackColor = true;
+            this.favoriteTeamsButton.Click += new System.EventHandler(this.favoriteTeamsButton_Click);
             // 
             // groupsButton
             // 
@@ -125,6 +127,7 @@ namespace BasicFacebookFeatures
             this.groupsButton.TabIndex = 6;
             this.groupsButton.Text = "Groups";
             this.groupsButton.UseVisualStyleBackColor = true;
+            this.groupsButton.Click += new System.EventHandler(this.groupsButton_Click);
             // 
             // likedPagesButton
             // 

@@ -55,6 +55,7 @@ namespace BasicFacebookFeatures.SubForms
             this.listBoxGroups.Name = "listBoxGroups";
             this.listBoxGroups.Size = new System.Drawing.Size(424, 303);
             this.listBoxGroups.TabIndex = 75;
+            this.listBoxGroups.SelectedIndexChanged += new System.EventHandler(this.listBoxGroups_SelectedIndexChanged);
             // 
             // pictureBoxGroup
             // 

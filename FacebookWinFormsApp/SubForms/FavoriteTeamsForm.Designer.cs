@@ -30,9 +30,9 @@ namespace BasicFacebookFeatures.SubForms
         private void InitializeComponent()
         {
             this.likedPagesLabel = new System.Windows.Forms.Label();
-            this.pictureBoxPage = new System.Windows.Forms.PictureBox();
-            this.listBoxPages = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).BeginInit();
+            this.teamsPictureBox = new System.Windows.Forms.PictureBox();
+            this.listBoxTeams = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // likedPagesLabel
@@ -41,30 +41,31 @@ namespace BasicFacebookFeatures.SubForms
             this.likedPagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.likedPagesLabel.Location = new System.Drawing.Point(277, 19);
             this.likedPagesLabel.Name = "likedPagesLabel";
-            this.likedPagesLabel.Size = new System.Drawing.Size(225, 42);
+            this.likedPagesLabel.Size = new System.Drawing.Size(232, 42);
             this.likedPagesLabel.TabIndex = 72;
-            this.likedPagesLabel.Text = "Liked Pages";
+            this.likedPagesLabel.Text = "Liked Teams";
             // 
-            // pictureBoxPage
+            // teamsPictureBox
             // 
-            this.pictureBoxPage.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBoxPage.Location = new System.Drawing.Point(510, 135);
-            this.pictureBoxPage.Name = "pictureBoxPage";
-            this.pictureBoxPage.Size = new System.Drawing.Size(131, 106);
-            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPage.TabIndex = 71;
-            this.pictureBoxPage.TabStop = false;
+            this.teamsPictureBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.teamsPictureBox.Location = new System.Drawing.Point(510, 135);
+            this.teamsPictureBox.Name = "teamsPictureBox";
+            this.teamsPictureBox.Size = new System.Drawing.Size(131, 106);
+            this.teamsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.teamsPictureBox.TabIndex = 71;
+            this.teamsPictureBox.TabStop = false;
             // 
-            // listBoxPages
+            // listBoxTeams
             // 
-            this.listBoxPages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listBoxTeams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxPages.DisplayMember = "name";
-            this.listBoxPages.FormattingEnabled = true;
-            this.listBoxPages.Location = new System.Drawing.Point(37, 135);
-            this.listBoxPages.Name = "listBoxPages";
-            this.listBoxPages.Size = new System.Drawing.Size(426, 303);
-            this.listBoxPages.TabIndex = 70;
+            this.listBoxTeams.DisplayMember = "name";
+            this.listBoxTeams.FormattingEnabled = true;
+            this.listBoxTeams.Location = new System.Drawing.Point(37, 135);
+            this.listBoxTeams.Name = "listBoxTeams";
+            this.listBoxTeams.Size = new System.Drawing.Size(426, 303);
+            this.listBoxTeams.TabIndex = 70;
+            this.listBoxTeams.SelectedIndexChanged += new System.EventHandler(this.listBoxTeams_SelectedIndexChanged);
             // 
             // FavoriteTeamsForm
             // 
@@ -72,11 +73,11 @@ namespace BasicFacebookFeatures.SubForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.likedPagesLabel);
-            this.Controls.Add(this.pictureBoxPage);
-            this.Controls.Add(this.listBoxPages);
+            this.Controls.Add(this.teamsPictureBox);
+            this.Controls.Add(this.listBoxTeams);
             this.Name = "FavoriteTeamsForm";
             this.Text = "FavoriteTeamsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,7 +86,7 @@ namespace BasicFacebookFeatures.SubForms
         #endregion
 
         private System.Windows.Forms.Label likedPagesLabel;
-        private System.Windows.Forms.PictureBox pictureBoxPage;
-        private System.Windows.Forms.ListBox listBoxPages;
+        private System.Windows.Forms.PictureBox teamsPictureBox;
+        private System.Windows.Forms.ListBox listBoxTeams;
     }
 }

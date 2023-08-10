@@ -34,7 +34,7 @@ namespace BasicFacebookFeatures.subForms
             this.listBoxPosts = new System.Windows.Forms.ListBox();
             this.publishDateDataLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.statusRichText = new System.Windows.Forms.RichTextBox();
             this.feedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@ namespace BasicFacebookFeatures.subForms
             this.listBoxPostComments.Name = "listBoxPostComments";
             this.listBoxPostComments.Size = new System.Drawing.Size(608, 61);
             this.listBoxPostComments.TabIndex = 83;
+            this.listBoxPostComments.SelectedIndexChanged += new System.EventHandler(this.listBoxPostComments_SelectedIndexChanged);
             // 
             // listBoxPosts
             // 
@@ -76,6 +77,7 @@ namespace BasicFacebookFeatures.subForms
             this.listBoxPosts.Name = "listBoxPosts";
             this.listBoxPosts.Size = new System.Drawing.Size(608, 137);
             this.listBoxPosts.TabIndex = 81;
+            this.listBoxPosts.SelectedIndexChanged += new System.EventHandler(this.listBoxPosts_SelectedIndexChanged);
             // 
             // publishDateDataLabel
             // 
@@ -95,13 +97,13 @@ namespace BasicFacebookFeatures.subForms
             this.label2.TabIndex = 84;
             this.label2.Text = "publish date:";
             // 
-            // richTextBox1
+            // statusRichText
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(98, 57);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(416, 111);
-            this.richTextBox1.TabIndex = 89;
-            this.richTextBox1.Text = "";
+            this.statusRichText.Location = new System.Drawing.Point(98, 57);
+            this.statusRichText.Name = "statusRichText";
+            this.statusRichText.Size = new System.Drawing.Size(416, 111);
+            this.statusRichText.TabIndex = 89;
+            this.statusRichText.Text = "";
             // 
             // feedLabel
             // 
@@ -119,7 +121,7 @@ namespace BasicFacebookFeatures.subForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.feedLabel);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.statusRichText);
             this.Controls.Add(this.buttonSetStatus);
             this.Controls.Add(this.listBoxPostComments);
             this.Controls.Add(this.listBoxPosts);
@@ -139,7 +141,7 @@ namespace BasicFacebookFeatures.subForms
         private System.Windows.Forms.ListBox listBoxPosts;
         private System.Windows.Forms.Label publishDateDataLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox statusRichText;
         private System.Windows.Forms.Label feedLabel;
     }
 }

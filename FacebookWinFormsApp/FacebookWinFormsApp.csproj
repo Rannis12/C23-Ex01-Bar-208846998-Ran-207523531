@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForms\AlbumsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\AlbumsForm.Designer.cs">
+      <DependentUpon>AlbumsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\FavoriteTeamsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SubForms\AlbumsForm.resx">
+      <DependentUpon>AlbumsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\FavoriteTeamsForm.resx">
       <DependentUpon>FavoriteTeamsForm.cs</DependentUpon>
     </EmbeddedResource>

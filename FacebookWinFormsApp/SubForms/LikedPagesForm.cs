@@ -13,22 +13,19 @@ namespace BasicFacebookFeatures.subForms
 {
     public partial class LikedPagesForm : Form
     {
-        private readonly FacebookWrapper.ObjectModel.User m_LoggedInUser;
-        public LikedPagesForm(User i_User)
+        public LikedPagesForm()
         {
             InitializeComponent();
-            this.m_LoggedInUser = i_User;
-            show();
         }
 
-        private void show()
+        public void FetchPages(FacebookObjectCollection<Page> i_Pages)
         {
             listBoxPages.Items.Clear();
             listBoxPages.DisplayMember = "Name";
 
             try
             {
-                foreach (Page page in m_LoggedInUser.LikedPages)
+                foreach (Page page in i_Pages)
                 {
                     listBoxPages.Items.Add(page);
                 }

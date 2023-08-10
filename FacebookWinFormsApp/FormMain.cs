@@ -294,12 +294,11 @@ namespace BasicFacebookFeatures
                     postCount = post.Comments.Count;
                 }
             }
-
         }
 
         private void fetchRandomPhotoFeature()
         {
-            Photo randomPhoto= null;
+            Photo randomPhoto = null;
 
             List<Photo> photos = new List<Photo>();
 
@@ -319,6 +318,11 @@ namespace BasicFacebookFeatures
             randomPhoto = photos[randInd.Next(0, photos.Count - 1)];
 
             //expose random photo - todo
+        }
+
+        private void linkLabelFetchGroups_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 

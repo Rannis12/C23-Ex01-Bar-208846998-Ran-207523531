@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonSetStatus = new System.Windows.Forms.Button();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.listBoxPostComments = new System.Windows.Forms.ListBox();
             this.listBoxPosts = new System.Windows.Forms.ListBox();
             this.linkPosts = new System.Windows.Forms.LinkLabel();
@@ -54,9 +57,6 @@
             this.textBoxAppID = new System.Windows.Forms.TextBox();
             this.checkinLinkLabel = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonSetStatus = new System.Windows.Forms.Button();
-            this.textBoxStatus = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroup)).BeginInit();
@@ -145,6 +145,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
+            // buttonSetStatus
+            // 
+            this.buttonSetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSetStatus.Location = new System.Drawing.Point(728, 182);
+            this.buttonSetStatus.Name = "buttonSetStatus";
+            this.buttonSetStatus.Size = new System.Drawing.Size(73, 24);
+            this.buttonSetStatus.TabIndex = 80;
+            this.buttonSetStatus.Text = "Post";
+            this.buttonSetStatus.UseVisualStyleBackColor = true;
+            this.buttonSetStatus.UseWaitCursor = true;
+            this.buttonSetStatus.Click += new System.EventHandler(this.buttonSetStatus_Click);
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxStatus.Location = new System.Drawing.Point(450, 182);
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.Size = new System.Drawing.Size(272, 24);
+            this.textBoxStatus.TabIndex = 79;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(355, 185);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "Post Status:";
+            // 
             // listBoxPostComments
             // 
             this.listBoxPostComments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -229,6 +261,7 @@
             this.linkLabelFetchGroups.TabStop = true;
             this.linkLabelFetchGroups.Text = "Fetch Groups \r\n(Click on an group to view it\'s picture)";
             this.linkLabelFetchGroups.UseCompatibleTextRendering = true;
+            this.linkLabelFetchGroups.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFetchGroups_LinkClicked);
             // 
             // publishDateDataLabel
             // 
@@ -375,38 +408,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // buttonSetStatus
-            // 
-            this.buttonSetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSetStatus.Location = new System.Drawing.Point(728, 182);
-            this.buttonSetStatus.Name = "buttonSetStatus";
-            this.buttonSetStatus.Size = new System.Drawing.Size(73, 24);
-            this.buttonSetStatus.TabIndex = 80;
-            this.buttonSetStatus.Text = "Post";
-            this.buttonSetStatus.UseVisualStyleBackColor = true;
-            this.buttonSetStatus.UseWaitCursor = true;
-            this.buttonSetStatus.Click += new System.EventHandler(this.buttonSetStatus_Click);
-            // 
-            // textBoxStatus
-            // 
-            this.textBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxStatus.Location = new System.Drawing.Point(450, 182);
-            this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(272, 24);
-            this.textBoxStatus.TabIndex = 79;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(355, 185);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 78;
-            this.label3.Text = "Post Status:";
             // 
             // FormMain
             // 

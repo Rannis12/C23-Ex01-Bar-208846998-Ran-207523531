@@ -25,6 +25,7 @@ namespace BasicFacebookFeatures
         private GroupsForm m_GroupsForm;
         private LikedPagesForm m_LikedPagesForm;
         private PostForm m_PostForm;
+        private AlbumsForm m_AlbumsForm;
 
         public MainForm()
         {
@@ -57,17 +58,17 @@ namespace BasicFacebookFeatures
 
         private void allocateAllForms()
         {
-            m_LikedPagesForm = new LikedPagesForm(this.r_LogicManager.LoggedInUser);
+            m_LikedPagesForm = new LikedPagesForm();
             m_FavoriteTeamsForm = new FavoriteTeamsForm();
             m_GroupsForm = new GroupsForm();
-            m_PostForm = new PostForm();
+            m_PostForm = new PostForm(this.r_LogicManager.LoggedInUser);
+            m_AlbumsForm = new AlbumsForm();
 
 
         }
 
         private void loadUserData()
         {
-
             if (string.IsNullOrEmpty(r_LogicManager.LoginResult.ErrorMessage))
             {
                 loginButton.Text = $"Logged in as {r_LogicManager.LoggedInUser.Name}";
@@ -77,17 +78,50 @@ namespace BasicFacebookFeatures
                 rememberMeChoiceBox.Visible = false;
                 loginButton.Enabled = false;
                 logoutButton.Enabled = true;
+
+                usernameLabel.Text = $"{r_LogicManager.LoggedInUser.FirstName} {r_LogicManager.LoggedInUser.LastName}";
             }
         }
 
         private void postButton_Click(object sender, EventArgs e)
         {
-            //fetchPosts();
+            m_PostForm.FetchPosts();
+            loadSubForm(m_PostForm);
         }
 
         private void likedPagesButton_Click(object sender, EventArgs e)
         {
+            m_LikedPagesForm.FetchPages(r_LogicManager.LoggedInUser.LikedPages);
             loadSubForm(m_LikedPagesForm);
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            r_LogicManager.Logout();
+            FacebookService.LogoutWithUI();
+            this.Visible = false;
+            usernameLabel.Text = "";
+
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
+
+        private void albumsButton_Click(object sender, EventArgs e)
+        {
+            m_AlbumsForm.FetchAllAlbums(r_LogicManager.LoggedInUser.Albums);
+            loadSubForm(m_AlbumsForm);
+        }
+
+        private void groupsButton_Click(object sender, EventArgs e)
+        {
+            m_GroupsForm.FetchGroups(r_LogicManager.LoggedInUser.Groups);
+            loadSubForm(m_GroupsForm);
+        }
+
+        private void favoriteTeamsButton_Click(object sender, EventArgs e)
+        {
+            m_FavoriteTeamsForm.FetchTeams(r_LogicManager.LoggedInUser.FavofriteTeams);
+            loadSubForm(m_FavoriteTeamsForm);
         }
 
         private void loadSubForm(Form i_SubForm)
@@ -100,16 +134,6 @@ namespace BasicFacebookFeatures
             compenentsPanel.Controls.Add(i_SubForm);
             i_SubForm.BringToFront();
             i_SubForm.Show();
-        }
-
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            r_LogicManager.Logout();
-            FacebookService.LogoutWithUI();
-            this.Visible = false;
-
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
         }
     }
 }
