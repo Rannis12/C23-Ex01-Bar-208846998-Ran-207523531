@@ -36,14 +36,17 @@ namespace BasicFacebookFeatures.subForms
             this.label2 = new System.Windows.Forms.Label();
             this.statusRichText = new System.Windows.Forms.RichTextBox();
             this.feedLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSetStatus
             // 
             this.buttonSetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSetStatus.Location = new System.Drawing.Point(520, 101);
+            this.buttonSetStatus.Font = new System.Drawing.Font("Gill Sans MT", 11F);
+            this.buttonSetStatus.Location = new System.Drawing.Point(526, 68);
+            this.buttonSetStatus.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSetStatus.Name = "buttonSetStatus";
-            this.buttonSetStatus.Size = new System.Drawing.Size(73, 24);
+            this.buttonSetStatus.Size = new System.Drawing.Size(89, 39);
             this.buttonSetStatus.TabIndex = 88;
             this.buttonSetStatus.Text = "Post";
             this.buttonSetStatus.UseVisualStyleBackColor = true;
@@ -58,10 +61,11 @@ namespace BasicFacebookFeatures.subForms
             this.listBoxPostComments.DisplayMember = "name";
             this.listBoxPostComments.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPostComments.FormattingEnabled = true;
-            this.listBoxPostComments.ItemHeight = 19;
-            this.listBoxPostComments.Location = new System.Drawing.Point(96, 381);
+            this.listBoxPostComments.ItemHeight = 24;
+            this.listBoxPostComments.Location = new System.Drawing.Point(16, 302);
+            this.listBoxPostComments.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPostComments.Name = "listBoxPostComments";
-            this.listBoxPostComments.Size = new System.Drawing.Size(608, 61);
+            this.listBoxPostComments.Size = new System.Drawing.Size(591, 76);
             this.listBoxPostComments.TabIndex = 83;
             this.listBoxPostComments.SelectedIndexChanged += new System.EventHandler(this.listBoxPostComments_SelectedIndexChanged);
             // 
@@ -72,54 +76,71 @@ namespace BasicFacebookFeatures.subForms
             this.listBoxPosts.DisplayMember = "name";
             this.listBoxPosts.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPosts.FormattingEnabled = true;
-            this.listBoxPosts.ItemHeight = 19;
-            this.listBoxPosts.Location = new System.Drawing.Point(96, 227);
+            this.listBoxPosts.ItemHeight = 24;
+            this.listBoxPosts.Location = new System.Drawing.Point(16, 194);
+            this.listBoxPosts.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(608, 137);
+            this.listBoxPosts.Size = new System.Drawing.Size(591, 100);
             this.listBoxPosts.TabIndex = 81;
             this.listBoxPosts.SelectedIndexChanged += new System.EventHandler(this.listBoxPosts_SelectedIndexChanged);
             // 
             // publishDateDataLabel
             // 
             this.publishDateDataLabel.AutoSize = true;
-            this.publishDateDataLabel.Location = new System.Drawing.Point(652, 199);
+            this.publishDateDataLabel.Location = new System.Drawing.Point(557, 169);
+            this.publishDateDataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.publishDateDataLabel.Name = "publishDateDataLabel";
-            this.publishDateDataLabel.Size = new System.Drawing.Size(28, 13);
+            this.publishDateDataLabel.Size = new System.Drawing.Size(36, 17);
             this.publishDateDataLabel.TabIndex = 85;
             this.publishDateDataLabel.Text = "date";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(538, 199);
+            this.label2.Location = new System.Drawing.Point(405, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 84;
             this.label2.Text = "publish date:";
             // 
             // statusRichText
             // 
-            this.statusRichText.Location = new System.Drawing.Point(98, 57);
+            this.statusRichText.Location = new System.Drawing.Point(130, 68);
+            this.statusRichText.Margin = new System.Windows.Forms.Padding(4);
             this.statusRichText.Name = "statusRichText";
-            this.statusRichText.Size = new System.Drawing.Size(416, 111);
+            this.statusRichText.Size = new System.Drawing.Size(389, 63);
             this.statusRichText.TabIndex = 89;
             this.statusRichText.Text = "";
             // 
             // feedLabel
             // 
             this.feedLabel.AutoSize = true;
-            this.feedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedLabel.Location = new System.Drawing.Point(334, 9);
+            this.feedLabel.Font = new System.Drawing.Font("Gill Sans MT", 20F, System.Drawing.FontStyle.Bold);
+            this.feedLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.feedLabel.Location = new System.Drawing.Point(245, 9);
+            this.feedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.feedLabel.Name = "feedLabel";
-            this.feedLabel.Size = new System.Drawing.Size(104, 42);
+            this.feedLabel.Size = new System.Drawing.Size(99, 47);
             this.feedLabel.TabIndex = 90;
             this.feedLabel.Text = "Feed";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gill Sans MT", 11.2F, System.Drawing.FontStyle.Underline);
+            this.label1.Location = new System.Drawing.Point(17, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 27);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Post status:";
+            // 
             // PostForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 393);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.feedLabel);
             this.Controls.Add(this.statusRichText);
             this.Controls.Add(this.buttonSetStatus);
@@ -127,6 +148,7 @@ namespace BasicFacebookFeatures.subForms
             this.Controls.Add(this.listBoxPosts);
             this.Controls.Add(this.publishDateDataLabel);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PostForm";
             this.Text = "PostForm";
             this.ResumeLayout(false);
@@ -143,5 +165,6 @@ namespace BasicFacebookFeatures.subForms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox statusRichText;
         private System.Windows.Forms.Label feedLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

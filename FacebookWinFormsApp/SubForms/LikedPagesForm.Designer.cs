@@ -29,21 +29,11 @@ namespace BasicFacebookFeatures.subForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxPage = new System.Windows.Forms.PictureBox();
             this.listBoxPages = new System.Windows.Forms.ListBox();
             this.likedPagesLabel = new System.Windows.Forms.Label();
+            this.pictureBoxPage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxPage
-            // 
-            this.pictureBoxPage.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBoxPage.Location = new System.Drawing.Point(631, 125);
-            this.pictureBoxPage.Name = "pictureBoxPage";
-            this.pictureBoxPage.Size = new System.Drawing.Size(131, 106);
-            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPage.TabIndex = 68;
-            this.pictureBoxPage.TabStop = false;
             // 
             // listBoxPages
             // 
@@ -51,30 +41,46 @@ namespace BasicFacebookFeatures.subForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxPages.DisplayMember = "name";
             this.listBoxPages.FormattingEnabled = true;
-            this.listBoxPages.Location = new System.Drawing.Point(42, 125);
+            this.listBoxPages.ItemHeight = 16;
+            this.listBoxPages.Location = new System.Drawing.Point(10, 72);
+            this.listBoxPages.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPages.Name = "listBoxPages";
-            this.listBoxPages.Size = new System.Drawing.Size(533, 303);
+            this.listBoxPages.Size = new System.Drawing.Size(466, 308);
             this.listBoxPages.TabIndex = 67;
             this.listBoxPages.SelectedIndexChanged += new System.EventHandler(this.listBoxPages_SelectedIndexChanged);
             // 
             // likedPagesLabel
             // 
             this.likedPagesLabel.AutoSize = true;
-            this.likedPagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPagesLabel.Location = new System.Drawing.Point(282, 9);
+            this.likedPagesLabel.Font = new System.Drawing.Font("Gill Sans MT", 20F, System.Drawing.FontStyle.Bold);
+            this.likedPagesLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.likedPagesLabel.Location = new System.Drawing.Point(207, 9);
+            this.likedPagesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.likedPagesLabel.Name = "likedPagesLabel";
-            this.likedPagesLabel.Size = new System.Drawing.Size(225, 42);
+            this.likedPagesLabel.Size = new System.Drawing.Size(209, 47);
             this.likedPagesLabel.TabIndex = 69;
             this.likedPagesLabel.Text = "Liked Pages";
             // 
+            // pictureBoxPage
+            // 
+            this.pictureBoxPage.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxPage.Location = new System.Drawing.Point(486, 156);
+            this.pictureBoxPage.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxPage.Name = "pictureBoxPage";
+            this.pictureBoxPage.Size = new System.Drawing.Size(125, 111);
+            this.pictureBoxPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPage.TabIndex = 68;
+            this.pictureBoxPage.TabStop = false;
+            // 
             // LikedPagesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 553);
+            this.ClientSize = new System.Drawing.Size(620, 393);
             this.Controls.Add(this.likedPagesLabel);
             this.Controls.Add(this.pictureBoxPage);
             this.Controls.Add(this.listBoxPages);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LikedPagesForm";
             this.Text = "LikedPagesForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).EndInit();

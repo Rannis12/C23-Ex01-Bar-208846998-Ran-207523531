@@ -26,33 +26,57 @@ namespace BasicFacebookFeatures
         private LikedPagesForm m_LikedPagesForm;
         private PostForm m_PostForm;
         private AlbumsForm m_AlbumsForm;
+        private TopThreePostsForm m_TopThreePostsForm;
 
         public MainForm()
         {
-            r_LogicManager = new LogicManager();
             InitializeComponent();
+            r_LogicManager = new LogicManager();
+            if (r_LogicManager.AppSettings.RememberUser &&
+                                        !string.IsNullOrEmpty(r_LogicManager.AppSettings.LastAccessToken))
+            {
+                r_LogicManager.ConnectFromXml();
+                loadUserData();
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            r_LogicManager.LoadFormFile();
+            r_LogicManager.Login();
 
-            if(r_LogicManager.AppSettings.RememberUser)
+            if(r_LogicManager.LoggedInUser != null)
             {
-                r_LogicManager.ConnectFromXml();
-            }
-            else
-            {
-                r_LogicManager.Login();
-
-                if (rememberMeChoiceBox.CheckState == CheckState.Checked)
+                loadUserData();
+                if (rememberMeChoiceBox.Checked)
                 {
                     r_LogicManager.SaveUserAccessToken();
                 }
+                allocateAllForms();
+            }
+            else
+            {
+                MessageBox.Show(r_LogicManager.LoginResult.ErrorMessage, "Error while logging in!", MessageBoxButtons.OK,
+                                                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
-            loadUserData();
-            allocateAllForms();
+            ////r_LogicManager.LoadFormFile();
+
+            ////if (r_LogicManager.AppSettings.RememberUser)
+            ////{
+            ////    r_LogicManager.ConnectFromXml();
+            ////}
+            ////else
+            ////{
+            ////    r_LogicManager.Login();
+
+            ////    if (rememberMeChoiceBox.CheckState == CheckState.Checked)
+            ////    {
+            ////        r_LogicManager.SaveUserAccessToken();
+            ////    }
+            ////}
+
+            ////loadUserData();
+            ////allocateAllForms();
         }
         
 
@@ -63,24 +87,24 @@ namespace BasicFacebookFeatures
             m_GroupsForm = new GroupsForm();
             m_PostForm = new PostForm(this.r_LogicManager.LoggedInUser);
             m_AlbumsForm = new AlbumsForm();
-
+            m_TopThreePostsForm = new TopThreePostsForm();
 
         }
 
         private void loadUserData()
         {
-            if (string.IsNullOrEmpty(r_LogicManager.LoginResult.ErrorMessage))
-            {
-                loginButton.Text = $"Logged in as {r_LogicManager.LoggedInUser.Name}";
-                loginButton.BackColor = Color.LightGreen;
-                pictureBoxProfile.ImageLocation = r_LogicManager.LoggedInUser.PictureNormalURL;
-                
-                rememberMeChoiceBox.Visible = false;
-                loginButton.Enabled = false;
-                logoutButton.Enabled = true;
+            loginButton.Text = r_LogicManager.LoggedInUser.Name;
+            loginButton.BackColor = Color.LightGreen;
+            //pictureBoxProfile.ImageLocation = r_LogicManager.LoggedInUser.PictureNormalURL;
 
-                usernameLabel.Text = $"{r_LogicManager.LoggedInUser.FirstName} {r_LogicManager.LoggedInUser.LastName}";
-            }
+            pictureBoxProfile.LoadAsync(r_LogicManager.LoggedInUser.PictureNormalURL);
+
+
+            rememberMeChoiceBox.Visible = false;
+            loginButton.Enabled = false;
+            logoutButton.Enabled = true;
+
+            usernameLabel.Text = $"{r_LogicManager.LoggedInUser.FirstName} {r_LogicManager.LoggedInUser.LastName}";
         }
 
         private void postButton_Click(object sender, EventArgs e)
@@ -135,5 +159,13 @@ namespace BasicFacebookFeatures
             i_SubForm.BringToFront();
             i_SubForm.Show();
         }
+
+        private void topThreePostsButton_Click(object sender, EventArgs e)
+        {
+            m_TopThreePostsForm.FetchTopThreePosts(r_LogicManager.LoggedInUser.Posts);
+            loadSubForm(m_TopThreePostsForm);
+        }
+
+
     }
 }

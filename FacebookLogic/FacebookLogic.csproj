@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\FBApi\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\01_FB01_BasicFacebookFeatures.V8.0.2.2\01_FB01_BasicFacebookFeatures.V8.0.2.2\FBApi\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />

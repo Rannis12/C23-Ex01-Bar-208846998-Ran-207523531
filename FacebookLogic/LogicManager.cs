@@ -21,7 +21,7 @@ namespace BasicFacebookFeatures
 
         public LogicManager()
         {
-            AppSettings = new AppSettings();
+            AppSettings = AppSettings.LoadFormFile();
         }
 
         /*private void login()
@@ -257,32 +257,16 @@ namespace BasicFacebookFeatures
                 "user_videos",
                 "user_friends");
 
-            LoggedInUser = LoginResult.LoggedInUser;
+            if (!string.IsNullOrEmpty(LoginResult.AccessToken))
+            {
+                LoggedInUser = LoginResult.LoggedInUser;
+                //AppSettings.LastAccessToken = LoginResult.AccessToken;
+            }
         }
-
 
         public void SaveUserAccessToken()
         {
-            AppSettings.RememberUser = true;
-            AppSettings.LastAccessToken = LoginResult.AccessToken;
-
-            using (Stream stream = new FileStream(@"appSettings.xml", FileMode.Create))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
-                serializer.Serialize(stream, AppSettings);
-            }
-        }
-
-        public void LoadFormFile()
-        {
-            if(File.Exists(@"appSettings.xml"))
-            {
-                using (Stream stream = new FileStream(@"appSettings.xml", FileMode.Open))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
-                    AppSettings = serializer.Deserialize(stream) as AppSettings;
-                }
-            }
+            AppSettings.SaveUserAccessToken(LoginResult.AccessToken);
         }
 
         public void ConnectFromXml()

@@ -51,5 +51,10 @@ namespace BasicFacebookFeatures.SubForms
                 pictureBoxGroup.LoadAsync(selectedGroup.PictureNormalURL);
             }
         }
+
+        private void GroupsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,54 +30,69 @@ namespace BasicFacebookFeatures.SubForms
         private void InitializeComponent()
         {
             this.likedPagesLabel = new System.Windows.Forms.Label();
-            this.albumsPictureBox = new System.Windows.Forms.PictureBox();
             this.albumsPages = new System.Windows.Forms.ListBox();
+            this.albumsPictureBox = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // likedPagesLabel
             // 
             this.likedPagesLabel.AutoSize = true;
-            this.likedPagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPagesLabel.Location = new System.Drawing.Point(280, 16);
+            this.likedPagesLabel.Font = new System.Drawing.Font("Gill Sans MT", 20F, System.Drawing.FontStyle.Bold);
+            this.likedPagesLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.likedPagesLabel.Location = new System.Drawing.Point(214, 9);
+            this.likedPagesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.likedPagesLabel.Name = "likedPagesLabel";
-            this.likedPagesLabel.Size = new System.Drawing.Size(142, 42);
+            this.likedPagesLabel.Size = new System.Drawing.Size(144, 47);
             this.likedPagesLabel.TabIndex = 72;
             this.likedPagesLabel.Text = "Albums";
             // 
+            // albumsPages
+            // 
+            this.albumsPages.DisplayMember = "name";
+            this.albumsPages.FormattingEnabled = true;
+            this.albumsPages.ItemHeight = 16;
+            this.albumsPages.Location = new System.Drawing.Point(4, 4);
+            this.albumsPages.Margin = new System.Windows.Forms.Padding(4);
+            this.albumsPages.Name = "albumsPages";
+            this.albumsPages.Size = new System.Drawing.Size(467, 308);
+            this.albumsPages.TabIndex = 70;
+            this.albumsPages.SelectedIndexChanged += new System.EventHandler(this.albumsPages_SelectedIndexChanged);
+            // 
             // albumsPictureBox
             // 
-            this.albumsPictureBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.albumsPictureBox.Location = new System.Drawing.Point(629, 132);
+            this.albumsPictureBox.BackColor = System.Drawing.SystemColors.Control;
+            this.albumsPictureBox.Location = new System.Drawing.Point(474, 101);
+            this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.albumsPictureBox.Name = "albumsPictureBox";
-            this.albumsPictureBox.Size = new System.Drawing.Size(131, 106);
+            this.albumsPictureBox.Size = new System.Drawing.Size(136, 109);
             this.albumsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.albumsPictureBox.TabIndex = 71;
             this.albumsPictureBox.TabStop = false;
             // 
-            // albumsPages
+            // panel1
             // 
-            this.albumsPages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.albumsPages.DisplayMember = "name";
-            this.albumsPages.FormattingEnabled = true;
-            this.albumsPages.Location = new System.Drawing.Point(40, 132);
-            this.albumsPages.Name = "albumsPages";
-            this.albumsPages.Size = new System.Drawing.Size(533, 303);
-            this.albumsPages.TabIndex = 70;
-            this.albumsPages.SelectedIndexChanged += new System.EventHandler(this.albumsPages_SelectedIndexChanged);
+            this.panel1.Controls.Add(this.albumsPages);
+            this.panel1.Controls.Add(this.albumsPictureBox);
+            this.panel1.Location = new System.Drawing.Point(2, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(614, 325);
+            this.panel1.TabIndex = 73;
             // 
             // AlbumsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 393);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.likedPagesLabel);
-            this.Controls.Add(this.albumsPictureBox);
-            this.Controls.Add(this.albumsPages);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AlbumsForm";
-            this.Text = "AlbumsForm";
+            this.Text = "Albums";
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +103,6 @@ namespace BasicFacebookFeatures.SubForms
         private System.Windows.Forms.Label likedPagesLabel;
         private System.Windows.Forms.PictureBox albumsPictureBox;
         private System.Windows.Forms.ListBox albumsPages;
+        private System.Windows.Forms.Panel panel1;
     }
 }
