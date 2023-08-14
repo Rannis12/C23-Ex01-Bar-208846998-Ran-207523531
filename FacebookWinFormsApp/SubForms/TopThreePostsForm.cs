@@ -18,7 +18,7 @@ namespace BasicFacebookFeatures.SubForms
             InitializeComponent();
         }
 
-        internal void FetchTopThreePosts(FacebookObjectCollection<Post> i_Posts)
+        public void FetchTopThreePosts(FacebookObjectCollection<Post> i_Posts)
         {
             Post topPost = null;
             Post midPost = null;

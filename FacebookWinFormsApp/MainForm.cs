@@ -27,6 +27,8 @@ namespace BasicFacebookFeatures
         private PostForm m_PostForm;
         private AlbumsForm m_AlbumsForm;
         private TopThreePostsForm m_TopThreePostsForm;
+        private StatisticsForm m_statisticsForm;
+        private GenerateRandomAlbumForm m_GenerateRandomAlbumForm;
 
         public MainForm()
         {
@@ -36,6 +38,7 @@ namespace BasicFacebookFeatures
                                         !string.IsNullOrEmpty(r_LogicManager.AppSettings.LastAccessToken))
             {
                 r_LogicManager.ConnectFromXml();
+                allocateAllForms();
                 loadUserData();
             }
         }
@@ -47,10 +50,12 @@ namespace BasicFacebookFeatures
             if(r_LogicManager.LoggedInUser != null)
             {
                 loadUserData();
+
                 if (rememberMeChoiceBox.Checked)
                 {
                     r_LogicManager.SaveUserAccessToken();
                 }
+
                 allocateAllForms();
             }
             else
@@ -58,6 +63,7 @@ namespace BasicFacebookFeatures
                 MessageBox.Show(r_LogicManager.LoginResult.ErrorMessage, "Error while logging in!", MessageBoxButtons.OK,
                                                                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+
 
             ////r_LogicManager.LoadFormFile();
 
@@ -78,7 +84,7 @@ namespace BasicFacebookFeatures
             ////loadUserData();
             ////allocateAllForms();
         }
-        
+
 
         private void allocateAllForms()
         {
@@ -88,14 +94,15 @@ namespace BasicFacebookFeatures
             m_PostForm = new PostForm(this.r_LogicManager.LoggedInUser);
             m_AlbumsForm = new AlbumsForm();
             m_TopThreePostsForm = new TopThreePostsForm();
-
+            m_statisticsForm = new StatisticsForm(this.r_LogicManager.LoggedInUser);
+            m_GenerateRandomAlbumForm = new GenerateRandomAlbumForm(this.r_LogicManager.LoggedInUser);
         }
 
         private void loadUserData()
         {
-            loginButton.Text = r_LogicManager.LoggedInUser.Name;
+            loginButton.Text = "Logged in";
             loginButton.BackColor = Color.LightGreen;
-            //pictureBoxProfile.ImageLocation = r_LogicManager.LoggedInUser.PictureNormalURL;
+            pictureBoxProfile.ImageLocation = r_LogicManager.LoggedInUser.PictureNormalURL;
 
             pictureBoxProfile.LoadAsync(r_LogicManager.LoggedInUser.PictureNormalURL);
 
@@ -166,6 +173,14 @@ namespace BasicFacebookFeatures
             loadSubForm(m_TopThreePostsForm);
         }
 
+        private void statisicsButton_Click(object sender, EventArgs e)
+        {
+            loadSubForm(m_statisticsForm);
+        }
 
+        private void randomAlbumButton_Click(object sender, EventArgs e)
+        {
+            loadSubForm(m_GenerateRandomAlbumForm);
+        }
     }
 }

@@ -117,6 +117,12 @@
     <Compile Include="SubForms\FavoriteTeamsForm.Designer.cs">
       <DependentUpon>FavoriteTeamsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\GenerateRandomAlbumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\GenerateRandomAlbumForm.Designer.cs">
+      <DependentUpon>GenerateRandomAlbumForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\GroupsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="SubForms\PostForm.Designer.cs">
       <DependentUpon>PostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForms\TopThreePostsForm.cs">
       <SubType>Form</SubType>
@@ -163,6 +175,9 @@
     <EmbeddedResource Include="SubForms\FavoriteTeamsForm.resx">
       <DependentUpon>FavoriteTeamsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\GenerateRandomAlbumForm.resx">
+      <DependentUpon>GenerateRandomAlbumForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\GroupsForm.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\PostForm.resx">
       <DependentUpon>PostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\TopThreePostsForm.resx">
       <DependentUpon>TopThreePostsForm.cs</DependentUpon>
