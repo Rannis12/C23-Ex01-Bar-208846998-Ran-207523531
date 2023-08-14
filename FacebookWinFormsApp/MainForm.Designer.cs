@@ -31,6 +31,10 @@ namespace BasicFacebookFeatures
         {
             this.compenentsPanel = new System.Windows.Forms.Panel();
             this.dialogPanel = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.randomAlbumButton = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.statisicsButton = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,11 +55,9 @@ namespace BasicFacebookFeatures
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.statisicsButton = new System.Windows.Forms.Button();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.randomAlbumButton = new System.Windows.Forms.Button();
             this.dialogPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,8 +67,6 @@ namespace BasicFacebookFeatures
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // compenentsPanel
@@ -101,6 +101,48 @@ namespace BasicFacebookFeatures
             this.dialogPanel.Name = "dialogPanel";
             this.dialogPanel.Size = new System.Drawing.Size(228, 440);
             this.dialogPanel.TabIndex = 1;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(12, 391);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox9.TabIndex = 20;
+            this.pictureBox9.TabStop = false;
+            // 
+            // randomAlbumButton
+            // 
+            this.randomAlbumButton.Font = new System.Drawing.Font("Gill Sans MT", 10.5F);
+            this.randomAlbumButton.Location = new System.Drawing.Point(8, 386);
+            this.randomAlbumButton.Margin = new System.Windows.Forms.Padding(4);
+            this.randomAlbumButton.Name = "randomAlbumButton";
+            this.randomAlbumButton.Size = new System.Drawing.Size(214, 44);
+            this.randomAlbumButton.TabIndex = 19;
+            this.randomAlbumButton.Text = "Random Album";
+            this.randomAlbumButton.UseVisualStyleBackColor = true;
+            this.randomAlbumButton.Click += new System.EventHandler(this.randomAlbumButton_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(14, 340);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox8.TabIndex = 18;
+            this.pictureBox8.TabStop = false;
+            // 
+            // statisicsButton
+            // 
+            this.statisicsButton.Font = new System.Drawing.Font("Gill Sans MT", 10.5F);
+            this.statisicsButton.Location = new System.Drawing.Point(10, 335);
+            this.statisicsButton.Margin = new System.Windows.Forms.Padding(4);
+            this.statisicsButton.Name = "statisicsButton";
+            this.statisicsButton.Size = new System.Drawing.Size(214, 44);
+            this.statisicsButton.TabIndex = 17;
+            this.statisicsButton.Text = "Statistics";
+            this.statisicsButton.UseVisualStyleBackColor = true;
+            this.statisicsButton.Click += new System.EventHandler(this.statisicsButton_Click);
             // 
             // pictureBox7
             // 
@@ -259,9 +301,9 @@ namespace BasicFacebookFeatures
             this.usernameLabel.Location = new System.Drawing.Point(409, 49);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(57, 27);
+            this.usernameLabel.Size = new System.Drawing.Size(110, 34);
             this.usernameLabel.TabIndex = 10;
-            this.usernameLabel.Text = "label1";
+            this.usernameLabel.Text = "username";
             // 
             // logoutButton
             // 
@@ -320,48 +362,6 @@ namespace BasicFacebookFeatures
             this.label1.TabIndex = 12;
             this.label1.Text = "Logged In User:";
             // 
-            // statisicsButton
-            // 
-            this.statisicsButton.Font = new System.Drawing.Font("Gill Sans MT", 10.5F);
-            this.statisicsButton.Location = new System.Drawing.Point(10, 335);
-            this.statisicsButton.Margin = new System.Windows.Forms.Padding(4);
-            this.statisicsButton.Name = "statisicsButton";
-            this.statisicsButton.Size = new System.Drawing.Size(214, 44);
-            this.statisicsButton.TabIndex = 17;
-            this.statisicsButton.Text = "Statistics";
-            this.statisicsButton.UseVisualStyleBackColor = true;
-            this.statisicsButton.Click += new System.EventHandler(this.statisicsButton_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(14, 340);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(35, 34);
-            this.pictureBox8.TabIndex = 18;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(12, 391);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(35, 34);
-            this.pictureBox9.TabIndex = 20;
-            this.pictureBox9.TabStop = false;
-            // 
-            // randomAlbumButton
-            // 
-            this.randomAlbumButton.Font = new System.Drawing.Font("Gill Sans MT", 10.5F);
-            this.randomAlbumButton.Location = new System.Drawing.Point(8, 386);
-            this.randomAlbumButton.Margin = new System.Windows.Forms.Padding(4);
-            this.randomAlbumButton.Name = "randomAlbumButton";
-            this.randomAlbumButton.Size = new System.Drawing.Size(214, 44);
-            this.randomAlbumButton.TabIndex = 19;
-            this.randomAlbumButton.Text = "Random Album";
-            this.randomAlbumButton.UseVisualStyleBackColor = true;
-            this.randomAlbumButton.Click += new System.EventHandler(this.randomAlbumButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,6 +376,8 @@ namespace BasicFacebookFeatures
             this.Name = "MainForm";
             this.Text = "Facebook";
             this.dialogPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -386,8 +388,6 @@ namespace BasicFacebookFeatures
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }

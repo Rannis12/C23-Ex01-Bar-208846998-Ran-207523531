@@ -23,11 +23,8 @@ namespace BasicFacebookFeatures.SubForms
 
         private void buttonShowStatistics_Click(object sender, EventArgs e)
         {
-            int photosCount = 0;
-            int postsCount = 0;
-            int likesCount = 0;
-
-            r_StatisticsHandler.FetchStatistics(yearSelectionLabel.Value.ToString(), photosCount, postsCount, likesCount);
+            r_StatisticsHandler.FetchStatistics(yearSelectionLabel.Value.ToString(), 
+                out int photosCount, out int postsCount, out int likesCount);
 
             photosNumberLabel.Text = $"Photos count: {photosCount}";
             postsNumberLabel.Text = $"Posts count: {postsCount}";

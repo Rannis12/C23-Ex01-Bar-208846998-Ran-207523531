@@ -34,6 +34,7 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
             r_LogicManager = new LogicManager();
+            enableAllButtons(false);
             if (r_LogicManager.AppSettings.RememberUser &&
                                         !string.IsNullOrEmpty(r_LogicManager.AppSettings.LastAccessToken))
             {
@@ -50,6 +51,7 @@ namespace BasicFacebookFeatures
             if(r_LogicManager.LoggedInUser != null)
             {
                 loadUserData();
+                enableAllButtons(true);
 
                 if (rememberMeChoiceBox.Checked)
                 {
@@ -63,29 +65,7 @@ namespace BasicFacebookFeatures
                 MessageBox.Show(r_LogicManager.LoginResult.ErrorMessage, "Error while logging in!", MessageBoxButtons.OK,
                                                                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-
-
-            ////r_LogicManager.LoadFormFile();
-
-            ////if (r_LogicManager.AppSettings.RememberUser)
-            ////{
-            ////    r_LogicManager.ConnectFromXml();
-            ////}
-            ////else
-            ////{
-            ////    r_LogicManager.Login();
-
-            ////    if (rememberMeChoiceBox.CheckState == CheckState.Checked)
-            ////    {
-            ////        r_LogicManager.SaveUserAccessToken();
-            ////    }
-            ////}
-
-            ////loadUserData();
-            ////allocateAllForms();
         }
-
-
         private void allocateAllForms()
         {
             m_LikedPagesForm = new LikedPagesForm();
@@ -105,7 +85,6 @@ namespace BasicFacebookFeatures
             pictureBoxProfile.ImageLocation = r_LogicManager.LoggedInUser.PictureNormalURL;
 
             pictureBoxProfile.LoadAsync(r_LogicManager.LoggedInUser.PictureNormalURL);
-
 
             rememberMeChoiceBox.Visible = false;
             loginButton.Enabled = false;
@@ -132,6 +111,7 @@ namespace BasicFacebookFeatures
             FacebookService.LogoutWithUI();
             this.Visible = false;
             usernameLabel.Text = "";
+            enableAllButtons(false);
 
             MainForm mainForm = new MainForm();
             mainForm.Show();
@@ -165,6 +145,13 @@ namespace BasicFacebookFeatures
             compenentsPanel.Controls.Add(i_SubForm);
             i_SubForm.BringToFront();
             i_SubForm.Show();
+        }
+
+        private void enableAllButtons(bool i_ShouldEnableButton)
+        {
+
+            dialogPanel.Visible = i_ShouldEnableButton;
+
         }
 
         private void topThreePostsButton_Click(object sender, EventArgs e)

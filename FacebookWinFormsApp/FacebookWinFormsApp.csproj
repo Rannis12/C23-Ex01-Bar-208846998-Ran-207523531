@@ -91,12 +91,6 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="FormDesign.cs" />
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     <Compile Include="SubForms\TopThreePostsForm.Designer.cs">
       <DependentUpon>TopThreePostsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
