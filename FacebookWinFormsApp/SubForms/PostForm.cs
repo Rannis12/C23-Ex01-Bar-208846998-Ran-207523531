@@ -13,7 +13,7 @@ namespace BasicFacebookFeatures.subForms
 {
     public partial class PostForm : Form
     {
-        private User r_LoggedInUser;
+        private readonly User r_LoggedInUser;
         public PostForm(User i_User)
         {
             r_LoggedInUser = i_User;
@@ -24,7 +24,6 @@ namespace BasicFacebookFeatures.subForms
         {
             listBoxPosts.Items.Clear();
             
-
             foreach (Post post in r_LoggedInUser.Posts)
             {
                 if (post.Message != null)

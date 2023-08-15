@@ -18,7 +18,6 @@ namespace BasicFacebookFeatures.SubForms
             InitializeComponent();
         }
 
-
         public void FetchTeams(Page[] i_Teams)
         {
             listBoxTeams.Items.Clear();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookLogic;
+using FacebookLogic.Handlers;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.SubForms

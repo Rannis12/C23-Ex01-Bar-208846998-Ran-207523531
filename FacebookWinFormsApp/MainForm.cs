@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasicFacebookFeatures.subForms;
 using BasicFacebookFeatures.SubForms;
+using FacebookLogic;
+using FacebookLogic.Utils;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
-using Logic;
 
 namespace BasicFacebookFeatures
 {

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 
-namespace FacebookLogic
+namespace FacebookLogic.Handlers
 {
     public class AlbumGenerationHandler
     {
-        private readonly int k_AmountOfPhotos = 4;
+        private const int k_AmountOfPhotos = 4;
         private readonly User r_LoggedInUser;
 
         public AlbumGenerationHandler(User i_LoggedInUser)
