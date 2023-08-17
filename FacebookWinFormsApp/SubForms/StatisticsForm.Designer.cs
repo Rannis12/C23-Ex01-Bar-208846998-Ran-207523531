@@ -132,7 +132,7 @@ namespace BasicFacebookFeatures.SubForms
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.post_icon_180537;
+            this.pictureBox3.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.post_icon_180537;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(133, 164);
             this.pictureBox3.Name = "pictureBox3";
@@ -142,7 +142,7 @@ namespace BasicFacebookFeatures.SubForms
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.photo_stack_icon_icons_com_58273;
+            this.pictureBox5.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.photo_stack_icon_icons_com_58273;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(273, 164);
             this.pictureBox5.Name = "pictureBox5";
@@ -152,7 +152,7 @@ namespace BasicFacebookFeatures.SubForms
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.liked_pages;
+            this.pictureBox2.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.liked_pages;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(431, 164);
             this.pictureBox2.Name = "pictureBox2";

@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures
+namespace FacebookWinFormsApp
 {
     partial class MainForm
     {
@@ -155,7 +155,7 @@ namespace BasicFacebookFeatures
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.groups_Icon;
+            this.pictureBox1.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.groups_Icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(14, 131);
             this.pictureBox1.Name = "pictureBox1";
@@ -165,7 +165,7 @@ namespace BasicFacebookFeatures
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.liked_pages;
+            this.pictureBox2.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.liked_pages;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(14, 80);
             this.pictureBox2.Name = "pictureBox2";
@@ -175,7 +175,7 @@ namespace BasicFacebookFeatures
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.post_icon_180537;
+            this.pictureBox3.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.post_icon_180537;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(14, 30);
             this.pictureBox3.Name = "pictureBox3";
@@ -218,7 +218,7 @@ namespace BasicFacebookFeatures
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.photo_stack_icon_icons_com_58273;
+            this.pictureBox5.BackgroundImage = global::FacebookWinFormsApp.Properties.Resources.photo_stack_icon_icons_com_58273;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(14, 236);
             this.pictureBox5.Name = "pictureBox5";

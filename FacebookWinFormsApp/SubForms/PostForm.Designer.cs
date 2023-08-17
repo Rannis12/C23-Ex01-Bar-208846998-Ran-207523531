@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures.subForms
+namespace FacebookWinFormsApp.SubForms
 {
     partial class PostForm
     {

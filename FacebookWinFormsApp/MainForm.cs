@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasicFacebookFeatures.subForms;
 using BasicFacebookFeatures.SubForms;
-using FacebookLogic;
 using FacebookLogic.Utils;
+using FacebookWinFormsApp.SubForms;
 using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
 
-namespace BasicFacebookFeatures
+namespace FacebookWinFormsApp
 {
     public partial class MainForm : Form
     {
@@ -109,13 +101,14 @@ namespace BasicFacebookFeatures
         private void logoutButton_Click(object sender, EventArgs e)
         {
             r_LogicManager.Logout();
-            FacebookService.LogoutWithUI();
+            //FacebookService.LogoutWithUI();
+            FacebookService.Logout();
             this.Visible = false;
             usernameLabel.Text = "";
             enableAllButtons(false);
 
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            //MainForm mainForm = new MainForm();
+            //mainForm.Show();
         }
 
         private void albumsButton_Click(object sender, EventArgs e)
