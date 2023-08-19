@@ -42,6 +42,5 @@ namespace BasicFacebookFeatures.SubForms
                 teamsPictureBox.LoadAsync(selectedTeam.PictureNormalURL);
             }
         }
-
     }
 }

@@ -16,18 +16,18 @@ namespace FacebookLogic.Handlers
 
         public HashSet<Photo> GenerateAlbum()
         {
-            Random photoRnd = new Random();
+            Random photoRand = new Random();
             HashSet<Photo> photos = new HashSet<Photo>();
 
             for (int i = 0; i < k_AmountOfPhotos; i++)
             {
                 int albumIndex = generateRandomAlbumIndex();
-                int photoIndex = photoRnd.Next(0, r_LoggedInUser.Albums[albumIndex].Photos.Count - 1);
+                int photoIndex = photoRand.Next(0, r_LoggedInUser.Albums[albumIndex].Photos.Count - 1);
 
                 while (!photos.Add(r_LoggedInUser.Albums[albumIndex].Photos[photoIndex]))
                 {
                     albumIndex = generateRandomAlbumIndex();
-                    photoIndex = photoRnd.Next(0, r_LoggedInUser.Albums[albumIndex].Photos.Count - 1);
+                    photoIndex = photoRand.Next(0, r_LoggedInUser.Albums[albumIndex].Photos.Count - 1);
                 }
             }
 
@@ -36,24 +36,24 @@ namespace FacebookLogic.Handlers
 
         public bool IsUserHaveAtLeastFourPhotos()
         {
-            int count = 0;
+            int photosCount = 0;
 
             foreach (Album album in r_LoggedInUser.Albums)
             {
-                count += album.Photos.Count;
+                photosCount += album.Photos.Count;
             }
 
-            return count >= k_AmountOfPhotos;
+            return photosCount >= k_AmountOfPhotos;
         }
 
         private int generateRandomAlbumIndex()
         {
-            Random albumRnd = new Random();
-            int albumIndex = albumRnd.Next(0, r_LoggedInUser.Albums.Count - 1);
+            Random albumRand = new Random();
+            int albumIndex = albumRand.Next(0, r_LoggedInUser.Albums.Count - 1);
 
             while (r_LoggedInUser.Albums[albumIndex].Photos.Count == 0)
             {
-                albumIndex = albumRnd.Next(0, r_LoggedInUser.Albums.Count - 1);
+                albumIndex = albumRand.Next(0, r_LoggedInUser.Albums.Count - 1);
             }
 
             return albumIndex;

@@ -20,7 +20,7 @@ namespace FacebookWinFormsApp
         private PostForm m_PostForm;
         private AlbumsForm m_AlbumsForm;
         private TopThreePostsForm m_TopThreePostsForm;
-        private StatisticsForm m_statisticsForm;
+        private StatisticsForm m_StatisticsForm;
         private GenerateRandomAlbumForm m_GenerateRandomAlbumForm;
 
         public MainForm()
@@ -28,10 +28,12 @@ namespace FacebookWinFormsApp
             InitializeComponent();
             r_LogicManager = new LogicManager();
             enableAllButtons(false);
+
             if (r_LogicManager.AppSettings.RememberUser &&
                                         !string.IsNullOrEmpty(r_LogicManager.AppSettings.LastAccessToken))
             {
                 r_LogicManager.ConnectFromXml();
+                enableAllButtons(true);
                 allocateAllForms();
                 loadUserData();
             }
@@ -67,7 +69,7 @@ namespace FacebookWinFormsApp
             m_PostForm = new PostForm(this.r_LogicManager.LoggedInUser);
             m_AlbumsForm = new AlbumsForm();
             m_TopThreePostsForm = new TopThreePostsForm();
-            m_statisticsForm = new StatisticsForm(this.r_LogicManager.LoggedInUser);
+            m_StatisticsForm = new StatisticsForm(this.r_LogicManager.LoggedInUser);
             m_GenerateRandomAlbumForm = new GenerateRandomAlbumForm(this.r_LogicManager.LoggedInUser);
         }
 
@@ -101,14 +103,8 @@ namespace FacebookWinFormsApp
         private void logoutButton_Click(object sender, EventArgs e)
         {
             r_LogicManager.Logout();
-            //FacebookService.LogoutWithUI();
             FacebookService.Logout();
-            this.Visible = false;
-            usernameLabel.Text = "";
-            enableAllButtons(false);
-
-            //MainForm mainForm = new MainForm();
-            //mainForm.Show();
+            this.Close();
         }
 
         private void albumsButton_Click(object sender, EventArgs e)
@@ -143,9 +139,7 @@ namespace FacebookWinFormsApp
 
         private void enableAllButtons(bool i_ShouldEnableButton)
         {
-
             dialogPanel.Visible = i_ShouldEnableButton;
-
         }
 
         private void topThreePostsButton_Click(object sender, EventArgs e)
@@ -156,7 +150,7 @@ namespace FacebookWinFormsApp
 
         private void statisicsButton_Click(object sender, EventArgs e)
         {
-            loadSubForm(m_statisticsForm);
+            loadSubForm(m_StatisticsForm);
         }
 
         private void randomAlbumButton_Click(object sender, EventArgs e)
